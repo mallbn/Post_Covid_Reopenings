@@ -128,8 +128,7 @@ $(window).on('load', function() {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') + 
-          point['Description']) + 
-          point['Location']);
+          point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -817,14 +816,6 @@ $(window).on('load', function() {
             line.bindPopup(p[index]['Description']);
           }
 
-          polylinesLegend.addOverlay(line,
-            '<i class="color-line" style="background-color:' + p[index]['Color']
-            + '"></i> ' + p[index]['Display Name']);
-          
-          if (p[index]['Location'] && p[index]['Location'] != '') {
-            line.bindPopup(p[index]['Location']);
-          }
-          
           polylinesLegend.addOverlay(line,
             '<i class="color-line" style="background-color:' + p[index]['Color']
             + '"></i> ' + p[index]['Display Name']);
