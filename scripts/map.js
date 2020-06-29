@@ -816,11 +816,15 @@ $(window).on('load', function() {
           if (p[index]['Description'] && p[index]['Description'] != '') {
             line.bindPopup(p[index]['Description']);
           }
+
+          polylinesLegend.addOverlay(line,
+            '<i class="color-line" style="background-color:' + p[index]['Color']
+            + '"></i> ' + p[index]['Display Name']);
           
           if (p[index]['Location'] && p[index]['Location'] != '') {
             line.bindPopup(p[index]['Location']);
           }
-
+          
           polylinesLegend.addOverlay(line,
             '<i class="color-line" style="background-color:' + p[index]['Color']
             + '"></i> ' + p[index]['Display Name']);
